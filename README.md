@@ -1,37 +1,94 @@
-## Objetivo
+# Data Science Template
 
-O objetivo deste produto é fornecer um serviço automatizado que recomenda leads para um usuário dado sua atual lista de clientes (Portfólio).
- 
-## Contextualização
+[![Build Status](https://travis-ci.org/NeowayLabs/data-science-template.svg?branch=master)](https://travis-ci.org/NeowayLabs/data-science-template)
 
-Algumas empresas gostariam de saber quem são as demais empresas em um determinado mercado (população) que tem maior probabilidade se tornarem seus próximos clientes. Ou seja, a sua solução deve encontrar no mercado quem são os leads mais aderentes dado as características dos clientes presentes no portfólio do usuário.
+This repository contains a project creation tool for Data Science
+models. The main usage is quite simple, but we have a lot of features
+working **OUT OF THE BOX**:
 
-Além disso, sua solução deve ser agnóstica ao usuário. Qualquer usuário com uma lista de clientes que queira explorar esse mercado pode extrair valor do serviço.       
++ `Dockerfile` template;
++ Unit-tests architecture with coverage report;
++ Makefile for project management and Docker abstraction;
++ Python software distribution via `setup.py`;
++ Multiple releases formats into `/dist`: `.tar.gz`, `.egg` and `.whl`;
++ Documentation: Project Specification && Model Report;
++ Notebook template for data analysis;
++ Multiple linters to help catching bugs during development:
+  + security: **bandit**;
+  + style: **flake8**;
+  + typing: **mypy**;
++ CI/CD configuration with 3 stages: test, build and pages
+  + tests: run unit-tests;
+  + build: build docker image and populate `/dist`;
+  + pages: build html documentation using
+  [Sphinx](http://www.sphinx-doc.org/en/master/) and publish using
+  [Read The Docs](https://readthedocs.org/);
 
-Para o desafio, deverão ser consideradas as seguintes bases:
+# Usage
 
-Mercado: Base com informações sobre as empresas do Mercado a ser considerado. 
-Portfolio 1: Ids dos clientes da empresa 1
-Portfolio 2: Ids dos clientes da empresa 2
-Portfolio 3: Ids dos clientes da empresa 3 
+So let's create a new model! You just need clone this repository and
+use the bash script `create-model` as follow:
 
-Obs: todas as empresas(ids) dos portfolios estão contidos no Mercado(base de população). 
+``` bash
+git clone git@github.com:NeowayLabs/data-science-template.git
+cd data_science_template
+./create-model ~/awesome-model
+```
 
-Link para download das bases Mercado, Portfolio 1, Portfolio 2 e Portfolio 3 respectivamente: 
+The basic placeholders like `project name`, `python package name` are
+automatically filled! If you have configured the git `user.name` and
+`git user.email` the system will assume to be equal as `author` and
+`email` and will replace these placeholders as well. The directory
+created will be initialized as a git repository, but you still need
+configure your remote url manually.
 
-[https://drive.google.com/open?id=1y8-kGTMrsMi4q49x7LBYfu_iP2f0Xudi](https://drive.google.com/open?id=1y8-kGTMrsMi4q49x7LBYfu_iP2f0Xudi)
+The `create-model` program will help you configure the remote printing
+some instructions to do that correctly, keep **attention** to blue
+exclamation marks `[!]` on output of `create-model`. But basically you
+need do two steps:
 
-[https://drive.google.com/open?id=1hgBhk-S0jKCF-GYBz8eaaktvmkH9xI0b](https://drive.google.com/open?id=1hgBhk-S0jKCF-GYBz8eaaktvmkH9xI0b)
+1. Create a new project in [GitHub](https://github.com/).
+2. Get the ssh or https remote from it.
 
-[https://drive.google.com/open?id=1bbSy_0C981TbenfQOAhaK6Q_-q-ppq1X](https://drive.google.com/open?id=1bbSy_0C981TbenfQOAhaK6Q_-q-ppq1X)
+You can test the remote address executing a git clone command:
 
-[https://drive.google.com/open?id=18VH0WhmF3iRLk_pVwcTclUn_AiZFGYTX](https://drive.google.com/open?id=18VH0WhmF3iRLk_pVwcTclUn_AiZFGYTX)
+```bash
+git clone <your-repository-address-here>
+```
 
-As bases de portfólio poderão ser utilizadas para testar a aderência da solução. Além disso, se a equipe desejar, poderá simular portfólios por meio de amostragens no mercado. 
+To enable properly CI/CD functionality for your new repository you can
+do the following:
 
-## Requisitos técnicos obrigatórios
+1. Go to [Travis CI](https://travis-ci.org/).
+2. Select your repository to use with Travis CI.
+[These instructions](https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci)
+may help.
 
--  Utilizar técnicas de data science e machine learning para desenvolver o projeto;
--  Apresentar o desenvolvimento e outputs do modelo em um Jupyter Notebook ou outra tecnologia de apresentação de Output de modelos de Machine Learning;
--  A análise deve considerar os seguintes pontos: análise exploratória dos dados, tratamento dos dados, avaliação de algoritmos, treinamento do modelo, avaliação de performance do modelo e visualização dos resultados; 
--  Para a apresentação do projeto, o tempo entre o treinamento do modelo e o output deve ser menor que 20 min. 
+
+After this, update your git remote `origin` and do the
+first commit:
+
+``` bash
+cd ~/awesome-model
+make check  # check if everything is ok and tests are passing
+git add .
+git commit -m "Initial commit" # Or your desired message
+git remote add origin <your-repository-address-here>
+git push -u origin master
+```
+
+# Releasing Software
+
+You can release a new version of your software with this command:
+
+```bash
+make release VERSION=X.Y.Z
+```
+
+That is all. That command will build the docker image, run the tests,
+linters and if everything is ok: a new git tag will be created and
+be pushed to GitHub.
+
+
+# Author
+Neoway @ Data Analytics Team
