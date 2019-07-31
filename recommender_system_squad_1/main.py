@@ -1,5 +1,5 @@
 import fire
-from Final_Project_Squad1 import config  # noqa
+from recommender_system_squad_1 import config  # noqa
 
 
 def features(**kwargs):
@@ -84,7 +84,7 @@ def run(**kwargs):
     """Run the complete pipeline of the model.
     """
     print("Args: {}".format(kwargs))
-    print("Running Final_Project_Squad1 by bruno-manoel-dbki")
+    print("Running recommender_system_squad_1 by bruno-manoel-dbki")
     features(**kwargs)  # generate dataset for training
     train(**kwargs)     # training model and save to filesystem
     metadata(**kwargs)  # performance report

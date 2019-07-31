@@ -1,4 +1,4 @@
-# Model report - [`Final Project Squad1`]
+# Model report - [`recommender_system_squad_1`]
 This report should contain all relevant information regarding your model. Someone reading this document should be able to easily understand and reproducible your findings.
 
 ## Checklist
@@ -28,7 +28,7 @@ The model classifies the type of cuisine of a restaurant. It is based on regular
 
 ```python
 pip install -e .
-python -m Final_Project_Squad1 on_my_data.csv save_to_my_file.csv
+python -m recommender_system_squad_1 on_my_data.csv save_to_my_file.csv
 ```
 
 ### Output

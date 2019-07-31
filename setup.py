@@ -3,7 +3,7 @@ import os
 from os import path
 
 # Model package name
-NAME = 'Final_Project_Squad1'
+NAME = 'recommender_system_squad_1'
 # Current Version
 VERSION = os.environ.get('APP_VERSION', 'latest')
 

@@ -1,5 +1,5 @@
-IMAGE = Final Project Squad1
-PACKAGE = Final_Project_Squad1
+IMAGE = recommender_system_squad_1
+PACKAGE = recommender_system_squad_1
 CLOUD_ROOT = s3://data-analytics-nw/models
 PWD := $(shell pwd)
 UID := $(shell id -u)
@@ -37,7 +37,7 @@ help:
 	@echo "VARS"
 	@echo "    VERSION            Software Version variable."
 	@echo "    INPUT              Path for data to be predicted."
-	@echo "    PARAMS             Parameters to pass as: $ Final_Project_Squad1 <command> $(PARAMS)."
+	@echo "    PARAMS             Parameters to pass as: $ recommender_system_squad_1 <command> $(PARAMS)."
 
 # Variable set checking
 guard-%:
@@ -157,7 +157,7 @@ clean-dist:
 	rm -rf $(DOCKER_VOLUME)/dist/
 
 clean: clean-dist
-	rm -rf Final_Project_Squad1.egg_info
+	rm -rf recommender_system_squad_1.egg_info
 	find . -iname __pycache__ | xargs rm -rf
 
 

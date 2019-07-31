@@ -1,4 +1,4 @@
-# [`Final Project Squad1`]
+# [`recommender_system_squad_1`]
 > Simple project description.
 
 This model is a `type_of_modeling` that `do_something` to solve `this_problem` aimed to the clients of the `some_vertical`.
@@ -27,8 +27,8 @@ Make sure that **docker** is installed.
 
 Clone the project from the analytics Models repo.
 ```
-git clone https://github.com/<@github_username>/Final Project Squad1.git
-cd Final Project Squad1
+git clone https://github.com/<@github_username>/recommender_system_squad_1.git
+cd recommender_system_squad_1
 ```
 
 
@@ -67,4 +67,4 @@ cd Final Project Squad1
 * [docs](./docs): contains documentation of the project
 * [analysis](./analysis/): contains notebooks of data and modeling experimentation.
 * [tests](./tests/): contains files used for unit tests.
-* [Final_Project_Squad1](./Final_Project_Squad1/): main Python package with source of the model.
+* [recommender_system_squad_1](./recommender_system_squad_1/): main Python package with source of the model.
