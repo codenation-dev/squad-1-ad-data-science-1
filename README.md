@@ -1,94 +1,70 @@
-# Data Science Template
+# [`Final Project Squad1`]
+> Simple project description.
 
-[![Build Status](https://travis-ci.org/NeowayLabs/data-science-template.svg?branch=master)](https://travis-ci.org/NeowayLabs/data-science-template)
+This model is a `type_of_modeling` that `do_something` to solve `this_problem` aimed to the clients of the `some_vertical`.
 
-This repository contains a project creation tool for Data Science
-models. The main usage is quite simple, but we have a lot of features
-working **OUT OF THE BOX**:
+## Stakeholders
+> Describe the people involved in this project
 
-+ `Dockerfile` template;
-+ Unit-tests architecture with coverage report;
-+ Makefile for project management and Docker abstraction;
-+ Python software distribution via `setup.py`;
-+ Multiple releases formats into `/dist`: `.tar.gz`, `.egg` and `.whl`;
-+ Documentation: Project Specification && Model Report;
-+ Notebook template for data analysis;
-+ Multiple linters to help catching bugs during development:
-  + security: **bandit**;
-  + style: **flake8**;
-  + typing: **mypy**;
-+ CI/CD configuration with 3 stages: test, build and pages
-  + tests: run unit-tests;
-  + build: build docker image and populate `/dist`;
-  + pages: build html documentation using
-  [Sphinx](http://www.sphinx-doc.org/en/master/) and publish using
-  [Read The Docs](https://readthedocs.org/);
+| Role                 | Responsibility         | Full name                | e-mail       |
+| -----                | ----------------       | -----------              | ---------    |
+| Data Scientist       | Author                 | [`bruno-manoel-dbki`]            | [`brunod@alunos.utfpr.edu.br`] |
+| Project Owner        | Co-author              | [`First name Last Name`] | [`e-mail`]   |
 
-# Usage
+## Usage
+> Describe how to reproduce your model
 
-So let's create a new model! You just need clone this repository and
-use the bash script `create-model` as follow:
+Usage is standardized across models. There are two main things you need to know, the development workflow and the Makefile commands.
 
-``` bash
-git clone git@github.com:NeowayLabs/data-science-template.git
-cd data_science_template
-./create-model ~/awesome-model
+Both are made super simple to work with Git and Docker while versioning experiments and workspace.
+
+All you'll need to have setup is Docker and Git, which you probably already have. If you don't, feel free to ask for help.
+
+Makefile commands can be accessed using `make help`.
+
+
+Make sure that **docker** is installed.
+
+Clone the project from the analytics Models repo.
+```
+git clone https://github.com/<@github_username>/Final Project Squad1.git
+cd Final Project Squad1
 ```
 
-The basic placeholders like `project name`, `python package name` are
-automatically filled! If you have configured the git `user.name` and
-`git user.email` the system will assume to be equal as `author` and
-`email` and will replace these placeholders as well. The directory
-created will be initialized as a git repository, but you still need
-configure your remote url manually.
 
-The `create-model` program will help you configure the remote printing
-some instructions to do that correctly, keep **attention** to blue
-exclamation marks `[!]` on output of `create-model`. But basically you
-need do two steps:
+## Final Report (to be filled once the project is done)
 
-1. Create a new project in [GitHub](https://github.com/).
-2. Get the ssh or https remote from it.
+### Model Frequency
 
-You can test the remote address executing a git clone command:
+> Describe the interval frequency and estimated total time to run
 
-```bash
-git clone <your-repository-address-here>
-```
+### Model updating
 
-To enable properly CI/CD functionality for your new repository you can
-do the following:
+> Describe how your model may be updated in the future
 
-1. Go to [Travis CI](https://travis-ci.org/).
-2. Select your repository to use with Travis CI.
-[These instructions](https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci)
-may help.
+### Maintenance
 
+> Describe how your model may be maintained in the future
 
-After this, update your git remote `origin` and do the
-first commit:
+### Minimum viable product
 
-``` bash
-cd ~/awesome-model
-make check  # check if everything is ok and tests are passing
-git add .
-git commit -m "Initial commit" # Or your desired message
-git remote add origin <your-repository-address-here>
-git push -u origin master
-```
+> Describe a minimum configuration that would be able to create a minimum viable product.
 
-# Releasing Software
+### Early adopters
 
-You can release a new version of your software with this command:
+> Describe any potential paying users for this product if it was available today. Also state a point of contact for each of them.
 
-```bash
-make release VERSION=X.Y.Z
-```
+## Documentation
 
-That is all. That command will build the docker image, run the tests,
-linters and if everything is ok: a new git tag will be created and
-be pushed to GitHub.
+* [project_specification.md](./docs/project_specification.md): gives a data-science oriented description of the project.
+
+* [model_report.md](./docs/model_report.md): describes the modeling performed.
 
 
-# Author
-Neoway @ Data Analytics Team
+#### Folder structure
+>Explain you folder strucure
+
+* [docs](./docs): contains documentation of the project
+* [analysis](./analysis/): contains notebooks of data and modeling experimentation.
+* [tests](./tests/): contains files used for unit tests.
+* [Final_Project_Squad1](./Final_Project_Squad1/): main Python package with source of the model.

@@ -1,4 +1,4 @@
-# Project specification - [`<@project>`]
+# Project specification - [`Final Project Squad1`]
 > This document contains a data-science oriented description of the project. It orients the data science project towards data and technology. It serves the purposes of
 
 * outlining a solution,

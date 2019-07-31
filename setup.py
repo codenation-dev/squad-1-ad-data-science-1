@@ -3,7 +3,7 @@ import os
 from os import path
 
 # Model package name
-NAME = 'model_name'
+NAME = 'Final_Project_Squad1'
 # Current Version
 VERSION = os.environ.get('APP_VERSION', 'latest')
 
@@ -26,8 +26,8 @@ setup(
     version=VERSION,
     description='<@description>',
     long_description=LONG_DESCRIPTION,
-    author='<@author>',
-    author_email='<@email>',
+    author='bruno-manoel-dbki',
+    author_email='brunod@alunos.utfpr.edu.br',
     license='MIT',
     packages=find_packages(exclude=("tests", "docs")),
     entry_points={
