@@ -132,3 +132,13 @@ vl_idade_maxima_socios_pj
 qt_alteracao_socio_180d
 qt_coligados_norte
 media_faturamento_est_coligados
+fl_spa
+fl_simples_irregular
+fl_veiculo
+fl_antt
+fl_epp
+qt_filiais
+qt_socios_masculino
+qt_socios_pj
+vl_total_veiculos_leves_grupo
+vl_total_veiculos_pesados_grupo
