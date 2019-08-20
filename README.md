@@ -1,15 +1,15 @@
 # [`recommender_system_squad_1`]
 > Simple project description.
 
-This model is a `type_of_modeling` that `do_something` to solve `this_problem` aimed to the clients of the `some_vertical`.
+This model is a `recommender_system` that `suggest new customers` based on a database with more than 460 000 clients. This base you can download [here](https://drive.google.com/open?id=1HUThfBgS3ZpdqoVu1mbxjSVjkCGKHkZg) and paste in this git folder. The notebook file ` Recommendation_system.ipynb` is running the recommendation system and use `clientes2_merge.csv` as example.
 
 ## Stakeholders
 > Describe the people involved in this project
 
 | Role                 | Responsibility         | Full name                | e-mail       |
 | -----                | ----------------       | -----------              | ---------    |
-| Data Scientist       | Author                 | [`bruno-manoel-dbki`]            | [`brunod@alunos.utfpr.edu.br`] |
-| Project Owner        | Co-author              | [`First name Last Name`] | [`e-mail`]   |
+| Data Scientist       | Author                 | [`bruno-manoel-dbki`]            | [`brunomanoel@dobrovolski.com.br`] |
+| Data Scientist       | Author              | [`Fernando Santana Pacheco`] | [`fspacheco@gmail.com`]   |
 
 ## Usage
 > Describe how to reproduce your model
