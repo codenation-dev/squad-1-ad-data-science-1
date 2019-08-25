@@ -25,20 +25,20 @@
 
 | problem type              | target population | entity | N_target | min_coverage | N_labeled | sucess_metrics | updt_freq |
 |---------------------------|-------------------|--------|----------|--------------|-----------|----------------|-----------|
-| multilabel classification | restaurants       | CNPJ   | 30M      | 80%          | NA        | NA             | monthly   |
+| recommendation system | business       | CNPJ   | 30M      | 80%          | NA        | NA             |  sporadic  |
 
 
 ### Objective
 > Provide a short (max 3-line) description  of the project's objective.
 
-"This project aims at developing a model to automatically determine the type of cuisine of a establishment."
+"This project aims at developing a recommendation system to recommend leads for a company based on a list of current clients.
 
 ### Target population
 > More detailed description of the population to which the model should apply. Include any relevant characteristics.
 
 | Entity | Region | Type        | Size | Status | Sector   | N_target |
 |--------|--------|-------------|------|--------|----------|----------|
-| CNPJ   | Brasil | restaurants | any  | active | services | 30M      |
+| CNPJ   | Brasil | companues | any  | active | all | 30M      |
 
 
 #### Subsetting
@@ -52,12 +52,7 @@
 ### Output specification
 > Describe how the output of the model will be delivered, including its domain and metadata.
 
-The model outputs a list of strings from the list `output_set`
-```python
-output_set = ['','pizza','mexicano','bar','churrascaria']
-output_example1 = [''] # none
-output_example2 = ['pizza','churrascaria']
-```
+The output is in principal notebook, showing a map marked with current clients and new leads.
 
 #### Metadata
 > Your model's metada should be provided in a machine-readable format (e.g. a json file) and include the following items:
@@ -72,49 +67,14 @@ output_example2 = ['pizza','churrascaria']
 ### Problem type
 > Describe to which Data Science problem type(s) this project relates to with a brief motivation.
 
-"Since the objective is to assign one or more labels to an entity, this problem is a multi-label classification. It is also unsupervised since no observed data is available."
+"Since the objective is to recommend new leads to a client, this problem is a recomemndation problem. It is also unsupervised since no observed data is available."
 
-## Solution architecture [Should this be here? Shouldn't we define a common archtecture?]
-> This section describes the architecture of your solution. It should clarify:
-
-* how and where from your model will consume data,
-* how and where to your model will generate predictions,
-* interaction with a scheduler, API or application,
-* interaction with a model managing system.
-
-Provide a schematic describing how your model will consume data, evaluate the model's output and deliver it to the application. You can use [Lucidchart](https://www.lucidchart.com) for the drawings.
 
 ### Limitations and risks
 > Provide a list with the main limitations and the associated risks for this project. (lile are supposed to be a well-educated guess)
 
 | Limitation                              | Likelihood | Loss                               | Contingency                        |
 |-----------------------------------------|------------|------------------------------------|------------------------------------|
-| Nonexistence of observed data           | 100%       | not possible to validate the model | Create a data partnership with VR. |
-| High false positives rate for `m_regex` | 30%        | lack of quality and trust          | Fine tuning of filters.            |
+| IDs not contained in the base           | 100%       | system wont suggest any lead  | Insert this clients and their data in the base. |
+| High number of clients with missing information in database | 50%        | The quality of suggestions could not be interesting | Update more informaiton about clients in the database.            |
 
-
-### Indexing [OPTIONAL - fill this up if it does not follow conventional pipeline]
-> Describe how your model's outputs will be indexed in the application. Provide any details that affect how the model should produce its outputs.
-
-## Related resources [OPTIONAL]
-> Short listing of related datasets and some specifications.
-
-### Related and observed datasets [OPTIONAL - may not apply]
-> List any related and observed datasets that can be used for your project.
-
-| table name                | observed? | description                                             | Why relevant                                            | Update frequency |
-|---------------------------|-----------|---------------------------------------------------------|---------------------------------------------------------|------------------|
-| data_science_sp.vr_ticket | yes       | contains 8M payouts made at VR-accepting establishments | Can be used to validate model                           | once             |
-| data_science.geo          | no        | contains features of a given region                     | can help create geolocalization features to the problem | yearly           |
-
-
-### Data partners [OPTIONAL - may not apply]
-> State the datasets available from data partnerships, including a description of restrictions that may apply.
-
-| partner | N  | label? | schema                                  | restrictions | terms | responsible     |
-|---------|----|--------|-----------------------------------------|--------------|-------|-----------------|
-| VR      | 1M | yes    | `data_science_sp.vr_transacoes_consumo` | none         | link  | @luana.grandino |
-
-
-## Additional resources [OPTIONAL]
-> Provide links to additional documentation and presentations regarding your project specification.
