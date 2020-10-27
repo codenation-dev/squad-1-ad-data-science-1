@@ -15,7 +15,7 @@ chardet==3.0.4
 cloudpickle==1.0.0
 command-not-found==0.3
 confuse==1.0.0
-cryptography==2.6.1
+cryptography==3.2
 cupshelpers==1.0
 cycler==0.10.0
 decorator==4.4.0
