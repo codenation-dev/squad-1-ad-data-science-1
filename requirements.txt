@@ -120,7 +120,7 @@ pyzmq==18.0.2
 QtAwesome==0.5.7
 qtconsole==4.5.1
 QtPy==1.7.1
-reportlab==3.4.0
+reportlab==3.5.55
 requests==2.21.0
 requests-unixsocket==0.1.5
 roman==2.0.0
